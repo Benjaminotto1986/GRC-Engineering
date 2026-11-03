@@ -1,0 +1,127 @@
+{
+  "count": 24,
+  "data": [
+    {
+      "check": "Secure Boot should be enabled on supported Windows virtual machines",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "Non-internet-facing virtual machines should be protected with network security groups",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "Anti-Virus scans of your EDR are out of 7 days",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "IP forwarding on your virtual machine should be disabled",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "Virtual machines should be migrated to new Azure Resource Manager resources",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "Windows virtual machines should enable Azure Disk Encryption or EncryptionAtHost.",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "Guest Configuration extension should be installed on machines",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "Machines should be configured to periodically check for missing system updates",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "vTPM should be enabled on supported virtual machines",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "Virtual machines' Guest Configuration extension should be deployed with system-assigned managed identity",
+      "machine": "azurepolicyforwindows",
+      "status": "Healthy"
+    },
+    {
+      "check": "Virtual machines and virtual machine scale sets should have encryption at host enabled",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "Anti-Virus component in your EDR is off or partially configured",
+      "machine": "test-vm",
+      "status": "Healthy"
+    },
+    {
+      "check": "All network ports should be restricted on network security groups associated to your virtual machine",
+      "machine": "test-vm",
+      "status": "NotApplicable"
+    },
+    {
+      "check": "Internet-facing virtual machines should be protected with network security groups",
+      "machine": "test-vm",
+      "status": "NotApplicable"
+    },
+    {
+      "check": "Management ports should be closed on your virtual machines",
+      "machine": "test-vm",
+      "status": "NotApplicable"
+    },
+    {
+      "check": "Update windows_server_2025",
+      "machine": "dc01",
+      "status": "Unhealthy"
+    },
+    {
+      "check": "Update edge_chromium-based",
+      "machine": "dc01",
+      "status": "Unhealthy"
+    },
+    {
+      "check": "Windows servers should be configured to use secure communication protocols",
+      "machine": "test-vm",
+      "status": "Unhealthy"
+    },
+    {
+      "check": "Guest Attestation extension should be installed on supported Windows virtual machines",
+      "machine": "test-vm",
+      "status": "Unhealthy"
+    },
+    {
+      "check": "Azure Backup should be enabled for virtual machines",
+      "machine": "test-vm",
+      "status": "Unhealthy"
+    },
+    {
+      "check": "Machines should be configured to periodically check for missing system updates",
+      "machine": "dc01",
+      "status": "Unhealthy"
+    },
+    {
+      "check": "Windows Defender Exploit Guard should be enabled on machines",
+      "machine": "dc01",
+      "status": "Unhealthy"
+    },
+    {
+      "check": "Windows servers should be configured to use secure communication protocols",
+      "machine": "dc01",
+      "status": "Unhealthy"
+    },
+    {
+      "check": "Windows Defender Exploit Guard should be enabled on machines",
+      "machine": "test-vm",
+      "status": "Unhealthy"
+    }
+  ],
+  "skip_token": null,
+  "total_records": 24
+}
