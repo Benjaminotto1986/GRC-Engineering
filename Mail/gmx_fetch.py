@@ -142,13 +142,21 @@ def main():
     args = parser.parse_args()
 
     # Zugangsdaten: zuerst Umgebungsvariablen, sonst interaktiv abfragen.
-    user = os.environ.get("GMX_USER") or input("GMX-Adresse: ")
-    password = os.environ.get("GMX_PASSWORD") or getpass.getpass("GMX-Passwort: ")
+    # .strip() entfernt versehentliche Leerzeichen/Zeilenumbrüche am Anfang/Ende (häufiger Fehler beim Eintragen).
+    user = (os.environ.get("GMX_USER") or input("GMX-Adresse: ")).strip()
+    password = (os.environ.get("GMX_PASSWORD") or getpass.getpass("GMX-Passwort: ")).strip()
+    quelle = "Umgebungsvariablen" if os.environ.get("GMX_PASSWORD") else "Eingabe"
+    print(f"Login als {user!r} (Passwort aus {quelle}, {len(password)} Zeichen) ...")
 
     try:
         imap = connect(user, password)
+    except UnicodeEncodeError:
+        sys.exit("Login fehlgeschlagen: Das Passwort enthält Sonderzeichen (z. B. Umlaute), die IMAP-Login nicht senden kann.")
     except imaplib.IMAP4.error as e:
-        sys.exit(f"Login fehlgeschlagen ({e}). Ist IMAP in den GMX-Einstellungen aktiviert?")
+        sys.exit(f"Login fehlgeschlagen ({e}).\n"
+                 "Prüfen: 1) GMX > E-Mail-Einstellungen > POP3/IMAP Abruf: Zugriff erlauben + Speichern\n"
+                 "        2) GMX > Sicherheit: Meldung 'Zugriff durch externes Programm blockiert'? -> zulassen\n"
+                 "        3) Stimmen Adresse und Passwortlänge oben?")
 
     try:
         ids = search_by_sender(imap, args.von, args.ordner)
