@@ -1,0 +1,4 @@
+# Abgerufene Mails und Zugangsdaten nie ins Repository
+Mail/*.json
+.env
+__pycache__/
