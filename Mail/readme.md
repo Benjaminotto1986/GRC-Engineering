@@ -6,8 +6,9 @@ Nur Python-Standardbibliothek – keine Installation nötig.
 ## Einrichtung (einmalig)
 1. GMX im Browser öffnen → **E-Mail → Einstellungen → POP3/IMAP Abruf** →
    „Zugriff auf dieses Postfach über externe Programme erlauben“ aktivieren.
-2. Bei aktivierter Zwei-Faktor-Authentifizierung ein **anwendungsspezifisches Passwort** anlegen
-   und dieses statt des normalen Passworts verwenden.
+2. Ein **anwendungsspezifisches Passwort** anlegen und dieses statt des normalen Passworts verwenden.
+   In der Praxis lehnte GMX das normale Passwort per IMAP mit `authentication failed` ab – auch ohne
+   sichtbare Zwei-Faktor-Einstellung. Mit dem anwendungsspezifischen Passwort klappte der Login sofort.
 
 ## Aufruf
 ```bash
