@@ -2,3 +2,4 @@
 Mail/*.json
 .env
 __pycache__/
+.venv
